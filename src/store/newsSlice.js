@@ -13,7 +13,6 @@ export const fetchNews = createAsyncThunk(
   }
 );
 
-
 export const searchNews = createAsyncThunk(
   'news/searchNews',
   async ({ query, pageSize, page }) => {
