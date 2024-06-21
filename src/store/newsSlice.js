@@ -7,7 +7,7 @@ export const fetchNews = createAsyncThunk(
   'news/fetchNews',
   async ({ country, category, pageSize, page }) => {
     const response = await axios.get(
-      `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}&page=${page}&pageSize=${pageSize}`
+      `http://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}&page=${page}&pageSize=${pageSize}`
     );
     return response.data.articles;
   }
@@ -17,7 +17,7 @@ export const searchNews = createAsyncThunk(
   'news/searchNews',
   async ({ query, pageSize, page }) => {
     const response = await axios.get(
-      `https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}&page=${page}&pageSize=${pageSize}`
+      `http://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}&page=${page}&pageSize=${pageSize}`
     );
     return response.data.articles;
   }
